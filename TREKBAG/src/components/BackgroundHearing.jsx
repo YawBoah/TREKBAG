@@ -2,7 +2,7 @@
 
 function BackgroundHearing() {
   return (
-    <div></div>
+    <h1>TREKBAG</h1>
   )
 }
 
