@@ -1,8 +1,13 @@
+import Counter from "./Counter"
+import Logo from "./Logo"
 
 
 function Header() {
   return (
-    <div></div>
+    <header>
+      <Logo/>
+      <Counter/>
+    </header>
   )
 }
 

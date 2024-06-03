@@ -1,6 +1,13 @@
+import AddItemForm from "./AddItemForm"
+import ButtonGroup from "./ButtonGroup"
+
 function Sidebar() {
   return (
-    <div></div>
+    <div className="sidebar">
+      <AddItemForm/>
+
+      <ButtonGroup/>
+    </div>
   )
 }
 
