@@ -1,9 +1,5 @@
-import { useState } from "react";
-import { initialItems } from "../lib/constants";
+function ItemList({ items }) {
 
-
-function ItemList() {
-  const [items, setItems] = useState(initialItems);
 
   return (
     <ul>
