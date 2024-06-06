@@ -29,7 +29,7 @@ function App() {
       <main>
         <Header />
         <ItemList items={items}/>
-        <Sidebar handleAddItem={handleAddItem}/>
+        <Sidebar onAddItem={handleAddItem}/>
       </main>
 
       <Footer />
