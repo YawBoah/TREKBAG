@@ -22,6 +22,10 @@ function App() {
       setItems(newItems);
     };
 
+    const handleRemoveAllItems = () => {
+      setItems([]);
+    }
+
   return (
     <>
       <BackgroundHearing />
@@ -29,7 +33,8 @@ function App() {
       <main>
         <Header />
         <ItemList items={items}/>
-        <Sidebar onAddItem={handleAddItem}/>
+        <Sidebar handleAddItem={handleAddItem}
+        handleRemoveAllItems={handleRemoveAllItems}/>
       </main>
 
       <Footer />

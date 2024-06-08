@@ -1,7 +1,7 @@
 
-function Button({type, children}) {
+function Button({buttonType, children}) {
   return (
-    <button className={`btn ${type === "secondary" ? 'btn--secondary' : ""}`}>{children}</button>
+    <button className={`btn ${buttonType === "secondary" ? 'btn--secondary' : ""}`}>{children}</button>
   )
 }
 
