@@ -7,6 +7,7 @@ function Sidebar({handleAddItem, handleRemoveAllItems}) {
       <AddItemForm onAddItem={handleAddItem}/>
 
       <ButtonGroup handleRemoveAllItems={handleRemoveAllItems}/>
+      
     </div>
   )
 }
