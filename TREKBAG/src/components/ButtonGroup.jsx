@@ -1,6 +1,8 @@
 import Button from "./Button";
 
-function ButtonGroup({handleRemoveAllItems, handleResetToInitial, handleMarkAllAsComplete, handleMarkAllAsIncomplete}) {
+function ButtonGroup({handleRemoveAllItems, handleResetToInitial, handleMarkAllAsComplete, handleMarkAllAsIncomplete}) 
+
+{
   return (
     <section className="button-group">
       <Button buttonType="secondary" onClick={handleMarkAllAsComplete}>Mark all as complete</Button>
