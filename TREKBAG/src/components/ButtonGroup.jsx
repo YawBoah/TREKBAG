@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function ButtonGroup(handleRemoveAllItems) {
+function ButtonGroup({handleRemoveAllItems}) {
   return (
     <section className="button-group">
       <Button buttonType="secondary">Mark all as complete</Button>
