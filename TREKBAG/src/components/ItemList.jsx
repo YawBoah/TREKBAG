@@ -1,10 +1,8 @@
-function ItemList({ items }) {
-
-
+function ItemList({ items, handleDeleteItem }) {
   return (
     <ul>
       {items.map((item) => (
-        <Item key={item.id} item={item} />
+        <Item key={item.id} item={item} handleDeleteItem={handleDeleteItem} />
       ))}
     </ul>
   );
@@ -12,7 +10,7 @@ function ItemList({ items }) {
 
 export default ItemList;
 
-function Item({ item }) {
+function Item({ item, handleDeleteItem }) {
   return (
     <li className="item">
       <label>
@@ -20,7 +18,7 @@ function Item({ item }) {
         {item.name}
       </label>
 
-      <button>❌</button>
+      <button onClick={() => handleDeleteItem(item.id)} >❌</button>
     </li>
   );
 }
