@@ -1,6 +1,10 @@
+import EmptyView from "./EmptyView";
+
 function ItemList({ items, handleDeleteItem, handleToggleItem }) {
   return (
-    <ul>
+    <ul className="item-list">
+      {items.length === 0 ? <EmptyView /> : null}
+
       {items.map((item) => (
         <Item
           key={item.id}
@@ -19,7 +23,11 @@ function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     <li className="item">
       <label>
-        <input onChange={() => onToggleItem(item.id)} checked={item.packed} type="checkbox" />
+        <input
+          onChange={() => onToggleItem(item.id)}
+          checked={item.packed}
+          type="checkbox"
+        />
         {item.name}
       </label>
 
