@@ -4,11 +4,13 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ItemList from "./components/ItemList";
 import Sidebar from "./components/Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { initialItems } from "./lib/constants";
 
 function App() {
-  const [items, setItems] = useState(initialItems);
+  const itemsFromLocalStorage =JSON.parse(localStorage.getItem("items"));
+
+  const [items, setItems] = useState(itemsFromLocalStorage || initialItems);
 
   const handleAddItem = (newItemText) => {
     const newItem = {
@@ -66,6 +68,9 @@ function App() {
     setItems(newItems);
   }
 
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items))
+  }, [items]);
 
   return (
     <>
