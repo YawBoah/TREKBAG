@@ -72,7 +72,7 @@ function App() {
       <BackgroundHearing />
 
       <main>
-        <Header totalNumberOfItems={items.length} />
+        <Header numberOfItemsPacked={items.filter(item => item.packed).length} totalNumberOfItems={items.length} />
         <ItemList items={items} handleDeleteItem={handleDeleteItem} handleToggleItem={handleToggleItem} />
         <Sidebar
           handleAddItem={handleAddItem}
