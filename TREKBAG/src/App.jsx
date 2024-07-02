@@ -65,12 +65,14 @@ function App() {
 
     setItems(newItems);
   }
+
+
   return (
     <>
       <BackgroundHearing />
 
       <main>
-        <Header />
+        <Header totalNumberOfItems={items.length} />
         <ItemList items={items} handleDeleteItem={handleDeleteItem} handleToggleItem={handleToggleItem} />
         <Sidebar
           handleAddItem={handleAddItem}

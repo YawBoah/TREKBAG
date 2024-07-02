@@ -2,11 +2,11 @@ import Counter from "./Counter"
 import Logo from "./Logo"
 
 
-function Header() {
+function Header({totalNumberOfItems}) {
   return (
     <header>
       <Logo/>
-      <Counter/>
+      <Counter totalNumberOfItems={totalNumberOfItems}/>
     </header>
   )
 }
