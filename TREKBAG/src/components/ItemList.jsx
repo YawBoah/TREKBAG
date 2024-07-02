@@ -1,9 +1,14 @@
+import Select from "react-select"
 import EmptyView from "./EmptyView";
 
 function ItemList({ items, handleDeleteItem, handleToggleItem }) {
   return (
     <ul className="item-list">
       {items.length === 0 ? <EmptyView /> : null}
+
+      {items.length > 0 ? <section className="sorting">
+       <Select/>
+      </section>: null}
 
       {items.map((item) => (
         <Item
