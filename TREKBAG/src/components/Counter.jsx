@@ -1,4 +1,4 @@
-function Counter({numberOfItemsPacked,totalNumberOfItems}) {
+function Counter({ numberOfItemsPacked, totalNumberOfItems }) {
   return (
     <p>
       {" "}
