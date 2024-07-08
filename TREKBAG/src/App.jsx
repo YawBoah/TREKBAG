@@ -1,4 +1,3 @@
-import ItemsContextProvider from "./context/ItemsContextProvider";
 import BackgroundHearing from "./components/BackgroundHearing";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -12,11 +11,10 @@ function App() {
       <BackgroundHearing />
 
       <main>
-        <ItemsContextProvider>
+       
         <Header />
         <ItemList />
         <Sidebar />
-        </ItemsContextProvider>
       </main>
 
       <Footer />
