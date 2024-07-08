@@ -1,4 +1,4 @@
-function Button({ onClick, buttonType, children }) {
+export default function Button({ onClick, buttonType, children }) {
   return (
     <button
       onClick={onClick}
@@ -8,5 +8,3 @@ function Button({ onClick, buttonType, children }) {
     </button>
   );
 }
-
-export default Button;
