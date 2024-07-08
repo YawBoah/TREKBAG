@@ -1,18 +1,17 @@
-import { useContext } from "react";
+import { useItemsStore } from "../stores/itemsStore";
 import AddItemForm from "./AddItemForm";
 import ButtonGroup from "./ButtonGroup";
-import { ItemsContext } from "../context/ItemsContextProvider";
 
-function Sidebar() {
-  const {handleAddItem} = useContext(ItemsContext);
+export default function Sidebar() {
+  const addItem = useItemsStore((state) => state.addItem);
+
+  console.log("Sidebar rendering...");
 
   return (
     <div className="sidebar">
-      <AddItemForm onAddItem={handleAddItem} />
+      <AddItemForm onAddItem={addItem} />
 
       <ButtonGroup />
     </div>
   );
 }
-
-export default Sidebar;
