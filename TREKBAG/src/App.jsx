@@ -11,7 +11,6 @@ function App() {
       <BackgroundHearing />
 
       <main>
-       
         <Header />
         <ItemList />
         <Sidebar />
