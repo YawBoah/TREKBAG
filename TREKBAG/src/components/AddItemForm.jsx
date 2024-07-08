@@ -7,7 +7,6 @@ function AddItemForm({onAddItem}) {
   
   const handleSubmit = (e) => {e.preventDefault();
 
-      // basic validation
       if (!itemText) {
         alert("Please enter an item");
         inputRef.current.focus();

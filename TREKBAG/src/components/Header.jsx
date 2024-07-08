@@ -1,18 +1,17 @@
-import { useContext } from "react"
-import Counter from "./Counter"
-import Logo from "./Logo"
-import { ItemsContext } from "../context/ItemsContextProvider"
+import { useItemsStore } from "../stores/itemsStores";
+import Counter from "./Counter";
+import Logo from "./Logo";
 
-
-function Header() {
-  const {items} = useContext(ItemsContext)
+export default function Header() {
+  const items = useItemsStore((state) => state.items);
 
   return (
     <header>
-      <Logo/>
-      <Counter numberOfItemsPacked={items.filter(item => item.packed).length} totalNumberOfItems={items.length}/>
+      <Logo />
+      <Counter
+        numberOfItemsPacked={items.filter((item) => item.packed).length}
+        totalNumberOfItems={items.length}
+      />
     </header>
-  )
+  );
 }
-
-export default Header

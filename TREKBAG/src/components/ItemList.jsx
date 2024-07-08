@@ -1,7 +1,7 @@
 import Select from "react-select";
 import EmptyView from "./EmptyView";
 import { useMemo, useState } from "react";
-import { useItemsStore } from "../stores/itemsStore";
+import { useItemsStore } from "../stores/itemsStores";
 
 const sortingOptions = [
   {
@@ -18,7 +18,7 @@ const sortingOptions = [
   },
 ];
 
-export default function ItemList() {
+ function ItemList() {
   const items = useItemsStore((state) => state.items);
   const deleteItem = useItemsStore((state) => state.deleteItem);
   const toggleItem = useItemsStore((state) => state.toggleItem);
@@ -84,3 +84,5 @@ function Item({ item, onDeleteItem, onToggleItem }) {
     </li>
   );
 }
+
+export default ItemList

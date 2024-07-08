@@ -1,8 +1,8 @@
-import { useItemsStore } from "../stores/itemsStore";
+import { useItemsStore } from "../stores/itemsStores";
 import AddItemForm from "./AddItemForm";
 import ButtonGroup from "./ButtonGroup";
 
-export default function Sidebar() {
+ function Sidebar() {
   const addItem = useItemsStore((state) => state.addItem);
 
   console.log("Sidebar rendering...");
@@ -15,3 +15,5 @@ export default function Sidebar() {
     </div>
   );
 }
+
+export default Sidebar

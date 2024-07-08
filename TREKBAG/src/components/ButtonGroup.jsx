@@ -1,7 +1,7 @@
-import { useItemsStore } from "../stores/itemsStore";
+import { useItemsStore } from "../stores/itemsStores";
 import Button from "./Button";
 
-export default function ButtonGroup() {
+ function ButtonGroup() {
   const markAllAsComplete = useItemsStore((state) => state.markAllAsComplete);
   const markAllAsIncomplete = useItemsStore(
     (state) => state.markAllAsIncomplete
@@ -41,3 +41,6 @@ export default function ButtonGroup() {
     </section>
   );
 }
+
+
+export default ButtonGroup 
