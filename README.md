@@ -2,6 +2,8 @@
 
 This project is a to-do list application built using React and Zustand for state management. The app allows users to add, delete, and toggle items as packed or unpacked. It also includes sorting functionality to view items based on their packed status.
 
+![image](https://github.com/YawBoah/TREKBAG/assets/126890146/8856768a-012a-46f0-b980-c76bc9dee0bf)
+
 ## Features
 
 - **Add Items**: Add new items to the list.
