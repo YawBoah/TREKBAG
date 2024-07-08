@@ -121,35 +121,38 @@ Handles the form submission to add a new item to the list.
 ### ButtonGroup
 
 ```jsx
-import { useItemsStore } from "../stores/itemsStore";
+
+import { useItemsStore } from "../stores/itemsStores";
 import Button from "./Button";
 
-export default function ButtonGroup() {
+function ButtonGroup() {
   const markAllAsComplete = useItemsStore((state) => state.markAllAsComplete);
-  const markAllAsIncomplete = useItemsStore((state) => state.markAllAsIncomplete);
+  const markAllAsIncomplete = useItemsStore(
+    (state) => state.markAllAsIncomplete
+  );
   const resetToInitial = useItemsStore((state) => state.resetToInitial);
   const removeAllItems = useItemsStore((state) => state.removeAllItems);
 
-  const secondaryButtons = [
-    { text: "Mark all as complete", onClick: markAllAsComplete },
-    { text: "Mark all as incomplete", onClick: markAllAsIncomplete },
-    { text: "Reset to initial", onClick: resetToInitial },
-    { text: "Remove all items", onClick: removeAllItems },
-  ];
-
   return (
     <section className="button-group">
-      {secondaryButtons.map((button) => (
-        <Button
-          key={button.text + button.onClick.toString()}
-          text={button.text}
-          onClick={button.onClick}
-          buttonType="secondary"
-        />
-      ))}
+      <Button buttonType="secondary" onClick={markAllAsComplete}>
+        Mark all as complete
+      </Button>
+      <Button buttonType="secondary" onClick={markAllAsIncomplete}>
+        Mark all as incomplete
+      </Button>
+      <Button buttonType="secondary" onClick={resetToInitial}>
+        Reset to initial
+      </Button>
+      <Button buttonType="secondary" onClick={removeAllItems}>
+        Remove all items
+      </Button>
     </section>
   );
 }
+
+export default ButtonGroup;
+
 ```
 
 ### ItemList
