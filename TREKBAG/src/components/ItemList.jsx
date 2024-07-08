@@ -1,8 +1,7 @@
 import Select from "react-select";
 import EmptyView from "./EmptyView";
-import { useContext, useState } from "react";
-import { useMemo } from "react";
-import { ItemsContext } from "../context/ItemsContextProvider";
+import { useMemo, useState } from "react";
+import { useItemsStore } from "../stores/itemsStore";
 
 const sortingOptions = [
   {
@@ -19,22 +18,26 @@ const sortingOptions = [
   },
 ];
 
-function ItemList() {
+export default function ItemList() {
+  const items = useItemsStore((state) => state.items);
+  const deleteItem = useItemsStore((state) => state.deleteItem);
+  const toggleItem = useItemsStore((state) => state.toggleItem);
   const [sortBy, setSortBy] = useState("default");
-const {items, handleDeleteItem, handleToggleItem} = useContext(ItemsContext)
 
-  const sortedItems = useMemo(() =>
-    [...items].sort((a, b) => {
-      if (sortBy === "packed") {
-        return b.packed - a.packed;
-      }
+  const sortedItems = useMemo(
+    () =>
+      [...items].sort((a, b) => {
+        if (sortBy === "packed") {
+          return b.packed - a.packed;
+        }
 
-      if (sortBy === "unpacked") {
-        return a.packed - b.packed;
-      }
+        if (sortBy === "unpacked") {
+          return a.packed - b.packed;
+        }
 
-      return;
-    }), [items, sortBy]
+        return;
+      }),
+    [items, sortBy]
   );
 
   return (
@@ -51,19 +54,19 @@ const {items, handleDeleteItem, handleToggleItem} = useContext(ItemsContext)
         </section>
       ) : null}
 
-      {sortedItems.map((item) => (
-        <Item
-          key={item.id}
-          item={item}
-          onDeleteItem={handleDeleteItem}
-          onToggleItem={handleToggleItem}
-        />
-      ))}
+      {sortedItems.map((item) => {
+        return (
+          <Item
+            key={item.id}
+            item={item}
+            onDeleteItem={deleteItem}
+            onToggleItem={toggleItem}
+          />
+        );
+      })}
     </ul>
   );
 }
-
-export default ItemList;
 
 function Item({ item, onDeleteItem, onToggleItem }) {
   return (
@@ -73,7 +76,7 @@ function Item({ item, onDeleteItem, onToggleItem }) {
           onChange={() => onToggleItem(item.id)}
           checked={item.packed}
           type="checkbox"
-        />
+        />{" "}
         {item.name}
       </label>
 
